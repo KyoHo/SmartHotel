@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:ViewBase
+    xmlns:views="clr-namespace:SmartHotel.Views.Base" 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:behaviors="clr-namespace:SmartHotel.Behaviors;assembly=SmartHotel" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartHotel.Views.Home.MenuView">
+    <ContentPage.Content>
+        <Grid  >
+            <Grid.RowDefinitions> 
+                <RowDefinition Height="200"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Image  Grid.Row="0" Source="avatar" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"/>
+            <StackLayout Grid.Row="0" Padding="20" BackgroundColor="Silver">
+               
+                <Label  Text="Hello," HorizontalOptions="Start" VerticalOptions="EndAndExpand"  FontSize="25"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Padding="21"  Margin="0,20,0,0">
+                <ListView x:Name="listMenu" RowHeight="70" ItemsSource="{Binding Menus}" SeparatorColor="Transparent"   behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding MenuItemSelectedCommand}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Image  Grid.Column="0" Source="{Binding Image}" HeightRequest="50" WidthRequest="50"/>
+                                    <Label  Grid.Column="1"  Text="{Binding Name}" TextColor="Black" BackgroundColor="Transparent" LineBreakMode="NoWrap" FontSize="25" VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+        </Grid>
+        
+    </ContentPage.Content>
+</views:ViewBase>

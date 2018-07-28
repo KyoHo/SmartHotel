@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:ViewBase
+    xmlns:views="clr-namespace:SmartHotel.Views.Base" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SmartHotel.Controls"
+    x:Class="SmartHotel.Views.Home.HotelView">
+    <ContentPage.Content>
+        <controls:HorizontalList ItemsSource="Items" ListOrientation="Horizontal">
+            <controls:HorizontalList.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <FlexLayout Direction="Row" >
+                          
+                                                <Label Text="{Binding Title}" Grid.Column="0" Grid.Row="0"/>
+                                                <Image Source="{Binding Image}" HeightRequest="20" WidthRequest="20" Grid.Row="1" Grid.Column="0" />
+                              
+                        </FlexLayout>
+                    </Grid>
+                </DataTemplate>
+            </controls:HorizontalList.ItemTemplate>
+        </controls:HorizontalList>
+    </ContentPage.Content>
+</views:ViewBase>

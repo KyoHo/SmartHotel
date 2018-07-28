@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views:ViewBase
+                xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:SmartHotel.Views.Base"
+             x:Class="SmartHotel.Views.Login.LoginView"
+    
+                >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="txtColor" >White</Color>
+        </ResourceDictionary>
+        </ContentPage.Resources>
+
+        <AbsoluteLayout>
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+            <Image x:Name="imgBackground" HorizontalOptions="FillAndExpand" Source="{Binding ImgBackground}">
+                <!--<Image.Source>
+                    <OnPlatform x:TypeArguments="ImageSource">
+                        <On Platform="Android,iOS" Value="img_header_background_1"/>
+                    </OnPlatform>
+                </Image.Source>-->
+            </Image>
+
+        </AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds=".5,0.12,1,1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="CenterAndExpand"  >
+                <StackLayout >
+                <Image x:Name="imgLogo"  Aspect="AspectFit" Source="{Binding ImgLogo}">
+                    <!--<Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="Android,iOS" Value="logo_splash"/>
+                    </OnPlatform>
+                    </Image.Source>-->
+                </Image>
+            </StackLayout>
+            </AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds=".2,.2,1,.5" AbsoluteLayout.LayoutFlags="All" >
+                <StackLayout >
+                    <Grid Margin="40">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition  Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Username"  Grid.Row="0" Grid.ColumnSpan="4" TextColor="{StaticResource txtColor}"/>
+                        <Entry Text="{Binding UserName}" Placeholder="Username" PlaceholderColor="White"  Grid.Row="1" Grid.ColumnSpan="4" TextColor="{StaticResource txtColor}"/>
+                        <Label Text="Password" Grid.Row="2" Grid.ColumnSpan="4" TextColor="{StaticResource txtColor}"/>
+                    <Entry Text="{Binding Password}" Placeholder="Password" PlaceholderColor="White" Grid.Row="3" Grid.ColumnSpan="4" TextColor="{StaticResource txtColor}" IsPassword="True"/>
+                        <Label Text="Forgot password ?" Grid.Row="4" Grid.Column="3" TextColor="{StaticResource txtColor}"  HorizontalTextAlignment="End"/>
+                        <Button Text="SIGN IN" Grid.Row="6"  Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" WidthRequest="100" Margin="30,0,30,0" TextColor="OrangeRed" BackgroundColor="White" Command="{Binding LoginCommand}"/>
+                        <Label Text="Or" Grid.Row="9" Grid.ColumnSpan="4" TextColor="Black"  HorizontalTextAlignment="Center"/>
+                        <Button Text="SIGN IN WITH MICROSOFT ACCOUNT" Grid.Row="10"  Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" WidthRequest="100" Margin="30,0,30,0" TextColor="{StaticResource txtColor}" BackgroundColor="DodgerBlue"/>
+                        <Label Text="Don't have an account?" Grid.Row="14" Grid.Column="0" TextColor="Black"  HorizontalTextAlignment="End" Grid.ColumnSpan="2" />
+                        <Label Text="Sign up" Grid.Row="14" Grid.Column="2" TextColor="OrangeRed"  HorizontalTextAlignment="Start" Grid.ColumnSpan="2" />
+                    </Grid>
+                <ActivityIndicator HeightRequest="30"
+                           WidthRequest="30"
+                           IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}" />
+            </StackLayout>
+            </AbsoluteLayout>
+        </AbsoluteLayout>
+</views:ViewBase>
