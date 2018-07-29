@@ -27,6 +27,7 @@ namespace SmartHotel
             ServiceLocator.Instance.RegisterViewModel<RoomViewModel, RoomView>();
             ServiceLocator.Instance.RegisterViewModel<SuggestionsViewModel, SuggestionsView>();
             ServiceLocator.Instance.RegisterViewModel<ConciergeViewModel, ConciergeView>();
+
             //MainPage = new MainPage
 
             ServiceLocator.Instance.Build();

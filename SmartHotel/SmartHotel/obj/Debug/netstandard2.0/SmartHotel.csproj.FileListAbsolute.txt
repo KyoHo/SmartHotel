@@ -17,3 +17,4 @@ E:\Study\Xamarin\class\SmartHotel\SmartHotel\SmartHotel\obj\Debug\netstandard2.0
 E:\Study\Xamarin\class\SmartHotel\SmartHotel\SmartHotel\obj\Debug\netstandard2.0\XamlC.stamp
 E:\Study\Xamarin\class\SmartHotel\SmartHotel\SmartHotel\obj\Debug\netstandard2.0\SmartHotel.dll
 E:\Study\Xamarin\class\SmartHotel\SmartHotel\SmartHotel\obj\Debug\netstandard2.0\SmartHotel.pdb
+E:\Study\Xamarin\class\SmartHotel\SmartHotel\SmartHotel\obj\Debug\netstandard2.0\SmartHotel.csprojAssemblyReference.cache

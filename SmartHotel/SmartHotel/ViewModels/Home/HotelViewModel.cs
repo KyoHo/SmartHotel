@@ -14,17 +14,21 @@ namespace SmartHotel.ViewModels.Home
         public ObservableCollection<Item> Items { get => _items; set { _items = value; OnPropertyChanged(); } }
         public HotelViewModel()
         {
-            int i = 0;
-            while (i > 5)
+            Items = new ObservableCollection<Item>();
+               Title = "aaaa";
+            int i = 1;
+            while (true)
             {
                 Items.Add(new Item { Title = "The room", Image = "i_hotel_2" });
                 i++;
+                if (i == 5) break;
             }
         }
 
+      
         public override void Init(object parameter = null)
         {
-            //new HotelViewModel();
+           // new HotelViewModel();
         }
     }
 }

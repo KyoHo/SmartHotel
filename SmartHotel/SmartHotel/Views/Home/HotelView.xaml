@@ -5,23 +5,41 @@
     xmlns:controls="clr-namespace:SmartHotel.Controls"
     x:Class="SmartHotel.Views.Home.HotelView">
     <ContentPage.Content>
-        <controls:HorizontalList ItemsSource="Items" ListOrientation="Horizontal">
-            <controls:HorizontalList.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <FlexLayout Direction="Row" >
-                          
-                                                <Label Text="{Binding Title}" Grid.Column="0" Grid.Row="0"/>
-                                                <Image Source="{Binding Image}" HeightRequest="20" WidthRequest="20" Grid.Row="1" Grid.Column="0" />
-                              
-                        </FlexLayout>
-                    </Grid>
-                </DataTemplate>
-            </controls:HorizontalList.ItemTemplate>
-        </controls:HorizontalList>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+                
+                
+            </StackLayout>
+            <StackLayout Grid.Row="1">
+                <ScrollView >
+                <controls:HorizontalList ItemsSource="{Binding Items}" ListOrientation="Horizontal" Grid.Row="3" VerticalOptions="Start">
+                    <controls:HorizontalList.ItemTemplate>
+                        <DataTemplate>
+                            <ContentView>
+                                <ContentView.Content>
+
+                                    <StackLayout WidthRequest="200">
+
+
+                                        <Image Source="{Binding Image}" HeightRequest="300" WidthRequest="300" />
+                                        <Label Text="{Binding Title}" LineBreakMode="MiddleTruncation"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"/>
+
+                                    </StackLayout>
+                                </ContentView.Content>
+                            </ContentView>
+                        </DataTemplate>
+                    </controls:HorizontalList.ItemTemplate>
+                </controls:HorizontalList>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+        
+        
     </ContentPage.Content>
 </views:ViewBase>
